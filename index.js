@@ -2,7 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
 const { EventRouter } = require("./Routes/EventsRouter");
-const Connection = require("./config/db");
+const Connection = require("./db");
 
 const app = express();
 const PORT = process.env.port || 3030;
