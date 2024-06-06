@@ -1,8 +1,8 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
-const { connection } = require("./config/db");
 const { EventRouter } = require("./Routes/EventsRouter");
+const Connection = require("./config/db");
 
 const app = express();
 const PORT = process.env.port || 3030;
@@ -16,7 +16,7 @@ app.use("/events", EventRouter);
 
 app.listen(PORT, async () => {
     try {
-        await connection;
+        await Connection;
         console.log("Connected to database");
     } catch (error) {
         console.log("Failed to connect to database !!");
